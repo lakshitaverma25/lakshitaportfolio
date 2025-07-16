@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
             {/* Main Container */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               
-              {/* Left Side - Connect Options & Gradient Bubbles */}
+              {/* Left Side - Connect Options */}
               <motion.div
                 variants={fadeInLeft}
                 initial="initial"
@@ -101,65 +101,6 @@ const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Gradient Bubbles Background */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Large Purple-Pink Bubble */}
-                  <motion.div
-                    animate={{ 
-                      y: [0, -20, 0],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{ 
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 opacity-80 blur-sm"
-                    style={{
-                      background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #8b5cf6 100%)',
-                      filter: 'blur(1px)'
-                    }}
-                  />
-                  
-                  {/* Medium Orange-Pink Bubble */}
-                  <motion.div
-                    animate={{ 
-                      y: [0, 15, 0],
-                      x: [0, 10, 0]
-                    }}
-                    transition={{ 
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
-                    className="absolute -top-20 left-32 w-60 h-60 rounded-full opacity-70"
-                    style={{
-                      background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #f59e0b 100%)',
-                      filter: 'blur(1px)'
-                    }}
-                  />
-                  
-                  {/* Small Pink Bubble */}
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      y: [0, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 2
-                    }}
-                    className="absolute -bottom-10 left-20 w-32 h-32 rounded-full opacity-60"
-                    style={{
-                      background: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
-                      filter: 'blur(0.5px)'
-                    }}
-                  />
-                </div>
-
                 {/* Connect Options */}
                 <div className="relative z-10 space-y-6">
                   <div className="text-center mb-8">
