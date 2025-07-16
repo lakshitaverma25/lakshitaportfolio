@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, User, MessageCircle, Send } from 'lucide-react';
+import { Mail, User, MessageCircle, Send, FileText } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../utils/animations';
 
@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
 
@@ -16,7 +17,7 @@ const Contact: React.FC = () => {
     // Handle form submission
     console.log('Form submitted:', formData);
     // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,6 +31,16 @@ const Contact: React.FC = () => {
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
       <ParticleBackground type="fireflies" />
       
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-5">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10 blur-sm"
+          style={{
+            backgroundImage: 'url(https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+          }}
+        />
+      </div>
+      
       <div className="absolute inset-0 bg-gradient-to-br from-black via-green-900/10 to-black z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
@@ -40,8 +51,12 @@ const Contact: React.FC = () => {
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Get In Touch
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            <span className="text-white">Let's </span>
+            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-500 bg-clip-text text-transparent drop-shadow-lg" 
+                  style={{ filter: 'drop-shadow(0 0 10px rgba(236, 72, 153, 0.3))' }}>
+              Connect!
+            </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
           <p className="text-white/70 mt-6 text-lg">
@@ -49,7 +64,7 @@ const Contact: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           <motion.div
             variants={fadeInLeft}
             initial="initial"
@@ -57,7 +72,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-8">
+            <div className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -66,7 +81,7 @@ const Contact: React.FC = () => {
                 >
                   <Mail className="text-white" size={24} />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-white">Let's Connect</h3>
+                <h3 className="text-2xl font-bold text-white">Get In Touch</h3>
               </div>
               
               <p className="text-white/90 leading-relaxed text-lg mb-6">
@@ -74,11 +89,11 @@ const Contact: React.FC = () => {
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-white/80">
+                <div className="flex items-center gap-3 text-white/80 p-3 bg-black/20 rounded-lg backdrop-blur-sm">
                   <Mail className="text-cyan-400" size={20} />
                   <span>vermalakshita63@gmail.com</span>
                 </div>
-                <div className="flex items-center gap-3 text-white/80">
+                <div className="flex items-center gap-3 text-white/80 p-3 bg-black/20 rounded-lg backdrop-blur-sm">
                   <MessageCircle className="text-purple-400" size={20} />
                   <span>Open to collaborations and opportunities</span>
                 </div>
@@ -92,10 +107,15 @@ const Contact: React.FC = () => {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-8 space-y-6">
-              <div className="space-y-4">
-                <div className="relative">
-                  <User className="absolute left-3 top-3 text-white/50" size={20} />
+            {/* Glassmorphism Contact Form */}
+            <form 
+              onSubmit={handleSubmit} 
+              className="bg-black/20 backdrop-blur-xl border border-white/10 rounded-2xl p-8 space-y-6 shadow-2xl"
+              style={{ backdropFilter: 'blur(20px)' }}
+            >
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="relative group">
+                  <User className="absolute left-3 top-3 text-white/40 group-focus-within:text-cyan-400 transition-colors" size={20} />
                   <input
                     type="text"
                     name="name"
@@ -103,12 +123,12 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-black/40 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:bg-black/40"
                   />
                 </div>
                 
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 text-white/50" size={20} />
+                <div className="relative group">
+                  <Mail className="absolute left-3 top-3 text-white/40 group-focus-within:text-cyan-400 transition-colors" size={20} />
                   <input
                     type="email"
                     name="email"
@@ -116,29 +136,48 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-black/40 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:bg-black/40"
                   />
                 </div>
-                
-                <div className="relative">
-                  <MessageCircle className="absolute left-3 top-3 text-white/50" size={20} />
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full pl-12 pr-4 py-3 bg-black/40 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all resize-none"
-                  />
-                </div>
+              </div>
+              
+              <div className="relative group">
+                <FileText className="absolute left-3 top-3 text-white/40 group-focus-within:text-cyan-400 transition-colors" size={20} />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full pl-12 pr-4 py-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:bg-black/40"
+                />
+              </div>
+              
+              <div className="relative group">
+                <MessageCircle className="absolute left-3 top-3 text-white/40 group-focus-within:text-cyan-400 transition-colors" size={20} />
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full pl-12 pr-4 py-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 resize-none hover:bg-black/40"
+                />
               </div>
 
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
+                className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 hover:shadow-2xl"
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: '0 0 30px rgba(236, 72, 153, 0.4)'
+                }}
                 whileTap={{ scale: 0.98 }}
+                style={{
+                  boxShadow: '0 0 20px rgba(236, 72, 153, 0.2)'
+                }}
               >
                 <Send size={20} />
                 Send Message
