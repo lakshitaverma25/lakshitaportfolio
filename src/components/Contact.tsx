@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, User, MessageCircle, Send, FileText } from 'lucide-react';
+import { Mail, User, MessageCircle, Send, FileText, Github, Linkedin, Instagram } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../utils/animations';
 
@@ -26,6 +26,33 @@ const Contact: React.FC = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const connectOptions = [
+    {
+      name: 'Gmail',
+      url: 'mailto:vermalakshita63@gmail.com',
+      icon: <Mail size={24} />,
+      color: 'from-red-500 to-red-600',
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/lakshita-verma-82b5a8319',
+      icon: <Linkedin size={24} />,
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/lakshitaverma25',
+      icon: <Github size={24} />,
+      color: 'from-gray-500 to-gray-600',
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/lakshita25_lk/',
+      icon: <Instagram size={24} />,
+      color: 'from-pink-500 to-purple-600',
+    },
+  ];
 
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
@@ -62,76 +89,113 @@ const Contact: React.FC = () => {
         </motion.div>
 
         <div className="flex items-center justify-center min-h-[600px]">
-          <div className="relative w-full max-w-6xl mx-auto">
+          <div className="relative w-full max-w-7xl mx-auto">
             {/* Main Container */}
-            <div className="relative flex items-center justify-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               
-              {/* Left Side - Gradient Bubbles */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-20 hidden lg:block">
-                {/* Large Purple-Pink Bubble */}
-                <motion.div
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 opacity-80 blur-sm"
-                  style={{
-                    background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #8b5cf6 100%)',
-                    filter: 'blur(1px)'
-                  }}
-                />
-                
-                {/* Medium Orange-Pink Bubble */}
-                <motion.div
-                  animate={{ 
-                    y: [0, 15, 0],
-                    x: [0, 10, 0]
-                  }}
-                  transition={{ 
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                  className="absolute -top-20 left-32 w-60 h-60 rounded-full opacity-70"
-                  style={{
-                    background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #f59e0b 100%)',
-                    filter: 'blur(1px)'
-                  }}
-                />
-                
-                {/* Small Pink Bubble */}
-                <motion.div
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    y: [0, -10, 0]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2
-                  }}
-                  className="absolute -bottom-10 left-20 w-32 h-32 rounded-full opacity-60"
-                  style={{
-                    background: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
-                    filter: 'blur(0.5px)'
-                  }}
-                />
-              </div>
+              {/* Left Side - Connect Options & Gradient Bubbles */}
+              <motion.div
+                variants={fadeInLeft}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Gradient Bubbles Background */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {/* Large Purple-Pink Bubble */}
+                  <motion.div
+                    animate={{ 
+                      y: [0, -20, 0],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ 
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 opacity-80 blur-sm"
+                    style={{
+                      background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #8b5cf6 100%)',
+                      filter: 'blur(1px)'
+                    }}
+                  />
+                  
+                  {/* Medium Orange-Pink Bubble */}
+                  <motion.div
+                    animate={{ 
+                      y: [0, 15, 0],
+                      x: [0, 10, 0]
+                    }}
+                    transition={{ 
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                    className="absolute -top-20 left-32 w-60 h-60 rounded-full opacity-70"
+                    style={{
+                      background: 'linear-gradient(135deg, #f97316 0%, #ec4899 50%, #f59e0b 100%)',
+                      filter: 'blur(1px)'
+                    }}
+                  />
+                  
+                  {/* Small Pink Bubble */}
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      y: [0, -10, 0]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 2
+                    }}
+                    className="absolute -bottom-10 left-20 w-32 h-32 rounded-full opacity-60"
+                    style={{
+                      background: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+                      filter: 'blur(0.5px)'
+                    }}
+                  />
+                </div>
 
-              {/* Contact Form - Center */}
+                {/* Connect Options */}
+                <div className="relative z-10 space-y-6">
+                  <div className="text-center mb-8">
+                    <h3 className="text-3xl font-bold text-white mb-4">Connect with me</h3>
+                    <p className="text-white/70">Choose your preferred way to get in touch</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {connectOptions.map((option, index) => (
+                      <motion.a
+                        key={option.name}
+                        href={option.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-4 bg-gradient-to-r ${option.color} rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        {option.icon}
+                        {option.name}
+                      </motion.a>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Side - Contact Form */}
               <motion.div
                 variants={fadeInRight}
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="relative z-30 w-full max-w-lg mx-auto"
+                className="relative z-30"
               >
                 <form 
                   onSubmit={handleSubmit} 
@@ -144,6 +208,11 @@ const Contact: React.FC = () => {
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
                   }}
                 >
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">Send me a message</h3>
+                    <p className="text-white/70">I'll get back to you as soon as possible</p>
+                  </div>
+
                   {/* Name Field */}
                   <div className="relative">
                     <input
