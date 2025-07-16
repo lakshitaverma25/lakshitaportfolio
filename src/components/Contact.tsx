@@ -54,15 +54,10 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      {/* Background Image - People Group Photo */}
+      {/* Background with smooth edges */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-          }}
-        />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/80 to-black" />
+        <ParticleBackground type="fireflies" />
       </div>
       
       <div className="container mx-auto px-4 relative z-20">
@@ -83,8 +78,24 @@ const Contact: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
         </motion.div>
 
+        {/* Background Image positioned from heading bottom */}
+        <div className="absolute left-0 right-0 z-10" style={{ top: '50%', transform: 'translateY(-50%)' }}>
+          <div 
+            className="w-full h-[600px] bg-cover bg-center relative"
+            style={{
+              backgroundImage: 'url(https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+            }}
+          >
+            {/* Smooth gradient overlay - more visible background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
+            {/* Smooth edges with gradient fade */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent via-transparent to-black/80" />
+          </div>
+        </div>
+
         <div className="flex items-center justify-center min-h-[600px]">
-          <div className="relative w-full max-w-7xl mx-auto">
+          <div className="relative w-full max-w-7xl mx-auto z-30">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               
               {/* Left Side - Connect Options */}
