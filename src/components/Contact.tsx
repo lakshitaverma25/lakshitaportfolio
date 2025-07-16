@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, User, MessageCircle, Send, FileText, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Instagram, MessageCircle } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../utils/animations';
 
@@ -14,9 +14,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -56,19 +54,16 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      <ParticleBackground type="fireflies" />
-      
-      {/* Background Image with Blur */}
-      <div className="absolute inset-0 z-5">
+      {/* Background Image - People Group Photo */}
+      <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 blur-sm"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+            backgroundImage: 'url(https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
           }}
         />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
-      
-      <div className="absolute inset-0 bg-black/60 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div
@@ -90,7 +85,6 @@ const Contact: React.FC = () => {
 
         <div className="flex items-center justify-center min-h-[600px]">
           <div className="relative w-full max-w-7xl mx-auto">
-            {/* Main Container */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               
               {/* Left Side - Connect Options */}
@@ -101,7 +95,6 @@ const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Connect Options */}
                 <div className="relative z-10 space-y-6">
                   <div className="text-center mb-8">
                     <h3 className="text-3xl font-bold text-white mb-4">Connect with me</h3>
