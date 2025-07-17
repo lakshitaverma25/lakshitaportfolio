@@ -89,13 +89,13 @@ const Contact: React.FC = () => {
             {/* Smooth gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
             {/* Smooth edges with gradient fade */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent via-transparent to-black/80" />
           </div>
         </div>
 
         <div className="flex items-center justify-center min-h-[700px]">
-          <div className="relative w-full max-w-7xl mx-auto z-30">
+          <div className="relative w-full max-w-6xl mx-auto z-30">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               
               {/* Left Side - Connect Options */}
@@ -140,11 +140,11 @@ const Contact: React.FC = () => {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="relative z-30"
+                className="relative z-30 max-w-md mx-auto"
               >
                 <form 
                   onSubmit={handleSubmit} 
-                  className="relative p-8 space-y-6"
+                  className="relative p-6 space-y-4"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     backdropFilter: 'blur(20px)',
@@ -154,7 +154,7 @@ const Contact: React.FC = () => {
                   }}
                 >
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">Send me a message</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">Send me a message</h3>
                     <p className="text-white/70">I'll get back to you as soon as possible</p>
                   </div>
 
@@ -167,7 +167,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-6 py-4 text-white placeholder-white/60 border border-white/20 rounded-2xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
+                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
                       style={{
                         background: 'rgba(255, 255, 255, 0.1)',
                         backdropFilter: 'blur(10px)',
@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-6 py-4 text-white placeholder-white/60 border border-white/20 rounded-2xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
+                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
                       style={{
                         background: 'rgba(255, 255, 255, 0.1)',
                         backdropFilter: 'blur(10px)',
@@ -201,7 +201,7 @@ const Contact: React.FC = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-6 py-4 text-white placeholder-white/60 border border-white/20 rounded-2xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
+                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
                       style={{
                         background: 'rgba(255, 255, 255, 0.1)',
                         backdropFilter: 'blur(10px)',
@@ -217,8 +217,8 @@ const Contact: React.FC = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="w-full px-6 py-4 text-white placeholder-white/60 border border-white/20 rounded-2xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 resize-none"
+                      rows={4}
+                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 resize-none"
                       style={{
                         background: 'rgba(255, 255, 255, 0.1)',
                         backdropFilter: 'blur(10px)',
@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
                   {/* Submit Button */}
                   <motion.button
                     type="submit"
-                    className="w-full py-4 px-8 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 text-white"
+                    className="w-full py-3 px-6 rounded-xl font-semibold text-base flex items-center justify-center gap-2 transition-all duration-300 text-white"
                     style={{
                       background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
                       boxShadow: '0 4px 20px rgba(236, 72, 153, 0.3)'
