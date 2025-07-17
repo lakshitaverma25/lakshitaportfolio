@@ -78,33 +78,33 @@ const Contact: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
         </motion.div>
 
-        {/* Background Image positioned right below the heading */}
-        <div className="absolute left-0 right-0 z-10" style={{ top: '200px' }}>
+        {/* Background Image positioned right below the "Let's Connect!" heading */}
+        <div className="absolute left-0 right-0 z-10" style={{ top: '160px' }}>
           <div 
-            className="w-full h-[700px] bg-cover bg-center relative"
+            className="w-full h-[800px] bg-cover bg-center relative"
             style={{
               backgroundImage: 'url(https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
             }}
           >
             {/* Smooth gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/70" />
             {/* Smooth edges with gradient fade */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/80" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent via-transparent to-black/80" />
           </div>
         </div>
 
-        <div className="flex items-center justify-center min-h-[700px]">
-          <div className="relative w-full max-w-6xl mx-auto z-30">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex items-center justify-center min-h-[800px]">
+          <div className="relative w-full max-w-7xl mx-auto z-30">
+            <div className="grid lg:grid-cols-3 gap-8 items-center">
               
-              {/* Left Side - Connect Options */}
+              {/* Left Side - Connect Options (2 columns) */}
               <motion.div
                 variants={fadeInLeft}
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="relative"
+                className="relative lg:col-span-2"
               >
                 <div className="relative z-10 space-y-6">
                   <div className="text-center mb-8">
@@ -112,39 +112,83 @@ const Contact: React.FC = () => {
                     <p className="text-white/70">Choose your preferred way to get in touch</p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4">
-                    {connectOptions.map((option, index) => (
-                      <motion.a
-                        key={option.name}
-                        href={option.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`p-4 bg-gradient-to-r ${option.color} rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        {option.icon}
-                        {option.name}
-                      </motion.a>
-                    ))}
-                  </div>
+                  {/* Restructured connect buttons in 2x2 grid */}
+                  <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                    {/* First row: Gmail and LinkedIn */}
+                    <motion.a
+                      href="mailto:vermalakshita63@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0 }}
+                    >
+                      <Mail size={24} />
+                      Gmail
+                    </motion.a>
+                    
+                    <motion.a
+                      href="https://www.linkedin.com/in/lakshita-verma-82b5a8319"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <Linkedin size={24} />
+                      LinkedIn
+                    </motion.a>
+                    
+                    {/* Second row: GitHub and Instagram */}
+                    <motion.a
+                      href="https://github.com/lakshitaverma25"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 bg-gradient-to-r from-gray-500 to-gray-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <Github size={24} />
+                      GitHub
+                    </motion.a>
+                    
+                    <motion.a
+                      href="https://www.instagram.com/lakshita25_lk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <Instagram size={24} />
+                      Instagram
+                    </motion.a>
                 </div>
               </motion.div>
 
-              {/* Right Side - Contact Form */}
+              {/* Right Side - Contact Form (1 column) */}
               <motion.div
                 variants={fadeInRight}
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="relative z-30 max-w-md mx-auto"
+                className="relative z-30 lg:col-span-1"
               >
                 <form 
                   onSubmit={handleSubmit} 
-                  className="relative p-6 space-y-4"
+                  className="relative p-6 space-y-4 max-w-sm mx-auto lg:ml-auto lg:mr-0"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     backdropFilter: 'blur(20px)',
