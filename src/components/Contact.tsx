@@ -54,11 +54,9 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      {/* Background with smooth edges */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/80 to-black" />
-        <ParticleBackground type="fireflies" />
-      </div>
+      <ParticleBackground type="fireflies" />
+      
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/10 to-black z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div
@@ -68,230 +66,114 @@ const Contact: React.FC = () => {
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-white">Let's </span>
-            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-500 bg-clip-text text-transparent drop-shadow-lg" 
-                  style={{ filter: 'drop-shadow(0 0 10px rgba(236, 72, 153, 0.3))' }}>
-              Connect!
-            </span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Let's Connect!
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
         </motion.div>
 
-        {/* Background Image positioned right below the "Let's Connect!" heading */}
-        <div className="absolute left-0 right-0 z-10" style={{ top: '160px' }}>
-          <div 
-            className="w-full h-[800px] bg-cover bg-center relative"
-            style={{
-              backgroundImage: 'url(https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-            }}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            variants={fadeInLeft}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="space-y-8"
           >
-            {/* Smooth gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/70" />
-            {/* Smooth edges with gradient fade */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent via-transparent to-black/80" />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center min-h-[800px]">
-          <div className="relative w-full max-w-7xl mx-auto z-30">
-            <div className="grid lg:grid-cols-3 gap-8 items-center">
-              
-              {/* Left Side - Connect Options (2 columns) */}
-              <motion.div
-                variants={fadeInLeft}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="relative lg:col-span-2"
-              >
-                <div className="relative z-10 space-y-6">
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-white mb-4">Connect with me</h3>
-                    <p className="text-white/70">Choose your preferred way to get in touch</p>
-                  </div>
-                  
-                  {/* Restructured connect buttons in 2x2 grid */}
-                  <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-                    {/* First row: Gmail and LinkedIn */}
-                    <motion.a
-                      href="mailto:vermalakshita63@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0 }}
-                    >
-                      <Mail size={24} />
-                      Gmail
-                    </motion.a>
-                    
-                    <motion.a
-                      href="https://www.linkedin.com/in/lakshita-verma-82b5a8319"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 }}
-                    >
-                      <Linkedin size={24} />
-                      LinkedIn
-                    </motion.a>
-                    
-                    {/* Second row: GitHub and Instagram */}
-                    <motion.a
-                      href="https://github.com/lakshitaverma25"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-4 bg-gradient-to-r from-gray-500 to-gray-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <Github size={24} />
-                      GitHub
-                    </motion.a>
-                    
-                    <motion.a
-                      href="https://www.instagram.com/lakshita25_lk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <Instagram size={24} />
-                      Instagram
-                    </motion.a>
-                </div>
-              </motion.div>
-
-              {/* Right Side - Contact Form (1 column) */}
-              <motion.div
-                variants={fadeInRight}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="relative z-30 lg:col-span-1"
-              >
-                <form 
-                  onSubmit={handleSubmit} 
-                  className="relative p-6 space-y-4 max-w-sm mx-auto lg:ml-auto lg:mr-0"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    borderRadius: '24px',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
-                  }}
-                >
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-white mb-2">Send me a message</h3>
-                    <p className="text-white/70">I'll get back to you as soon as possible</p>
-                  </div>
-
-                  {/* Name Field */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(10px)',
-                      }}
-                    />
-                  </div>
-                  
-                  {/* Email Field */}
-                  <div className="relative">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(10px)',
-                      }}
-                    />
-                  </div>
-                  
-                  {/* Subject Field */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(10px)',
-                      }}
-                    />
-                  </div>
-                  
-                  {/* Message Field */}
-                  <div className="relative">
-                    <textarea
-                      name="message"
-                      placeholder="Message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-4 py-3 text-white placeholder-white/60 border border-white/20 rounded-xl transition-all duration-300 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-white/20 resize-none"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(10px)',
-                      }}
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <motion.button
-                    type="submit"
-                    className="w-full py-3 px-6 rounded-xl font-semibold text-base flex items-center justify-center gap-2 transition-all duration-300 text-white"
-                    style={{
-                      background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
-                      boxShadow: '0 4px 20px rgba(236, 72, 153, 0.3)'
-                    }}
-                    whileHover={{ 
-                      scale: 1.02,
-                      boxShadow: '0 8px 30px rgba(236, 72, 153, 0.5)'
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Send size={20} />
-                    Send
-                  </motion.button>
-                </form>
-              </motion.div>
-
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-white mb-4">Connect with me</h3>
+              <p className="text-white/70">Choose your preferred way to get in touch</p>
             </div>
-          </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              {connectOptions.map((option, index) => (
+                <motion.a
+                  key={option.name}
+                  href={option.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-6 bg-gradient-to-r ${option.color} rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {option.icon}
+                  {option.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInRight}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <form 
+              onSubmit={handleSubmit} 
+              className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-8 space-y-6"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-white mb-2">Send me a message</h3>
+                <p className="text-white/70">I'll get back to you as soon as possible</p>
+              </div>
+
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-6 py-4 bg-black/40 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+                
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-6 py-4 bg-black/40 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+                
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-6 py-4 bg-black/40 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+                
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-6 py-4 bg-black/40 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-4 px-6 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Send size={20} />
+                Send Message
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -299,7 +181,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-  )
-}
-  )
-}
