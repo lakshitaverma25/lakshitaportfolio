@@ -26,43 +26,43 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Team Photo */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
+          backgroundImage: `url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
         }}
       />
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/70 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
-        {/* Title */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white">
-            Let's <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Connect!</span>
-          </h2>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Title */}
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-left"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+              Contact <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Me</span>
+            </h2>
+          </motion.div>
 
-        {/* Form centered */}
-        <div className="flex justify-center">
+          {/* Right side - Form */}
           <motion.div
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="w-full max-w-md"
+            className="w-full max-w-md ml-auto"
           >
             <form 
               onSubmit={handleSubmit} 
-              className="bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl p-8 space-y-6"
+              className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl p-8 space-y-6"
             >
               <div className="space-y-4">
                 <input
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-black/20 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
+                  className="w-full px-6 py-4 bg-black/30 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
                 />
                 
                 <input
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-black/20 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
+                  className="w-full px-6 py-4 bg-black/30 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
                 />
                 
                 <input
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-black/20 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
+                  className="w-full px-6 py-4 bg-black/30 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300"
                 />
                 
                 <textarea
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-6 py-4 bg-black/20 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300 resize-none"
+                  className="w-full px-6 py-4 bg-black/30 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300 resize-none"
                 />
               </div>
 
