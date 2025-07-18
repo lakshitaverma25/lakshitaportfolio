@@ -58,13 +58,11 @@ const Contact: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
+          backgroundImage: `url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
         }}
       />
       
-      <ParticleBackground type="fireflies" />
-      
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/30 to-black/80 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/60 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div
@@ -100,7 +98,7 @@ const Contact: React.FC = () => {
                   href={option.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-6 bg-gradient-to-r ${option.color} rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg`}
+                  className={`p-6 bg-gradient-to-r ${option.color} rounded-2xl text-white font-semibold flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-lg backdrop-blur-sm`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -123,7 +121,7 @@ const Contact: React.FC = () => {
           >
             <form 
               onSubmit={handleSubmit} 
-               className="bg-black/60 backdrop-blur-xl border-2 border-white/30 rounded-2xl p-8 space-y-6 shadow-2xl"
+               className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl p-8 space-y-6 shadow-2xl"
             >
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Send me a message</h3>
@@ -138,7 +136,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                   className="w-full px-6 py-4 bg-black/50 backdrop-blur-lg border-2 border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
+                   className="w-full px-6 py-4 bg-black/30 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
                 />
                 
                 <input
@@ -148,7 +146,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                   className="w-full px-6 py-4 bg-black/50 backdrop-blur-lg border-2 border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
+                   className="w-full px-6 py-4 bg-black/30 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
                 />
                 
                 <input
@@ -158,7 +156,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                   className="w-full px-6 py-4 bg-black/50 backdrop-blur-lg border-2 border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
+                   className="w-full px-6 py-4 bg-black/30 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300"
                 />
                 
                 <textarea
@@ -168,13 +166,13 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                   className="w-full px-6 py-4 bg-black/50 backdrop-blur-lg border-2 border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300 resize-none"
+                   className="w-full px-6 py-4 bg-black/30 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-cyan-400 focus:shadow-lg transition-all duration-300 resize-none"
                 />
               </div>
 
               <motion.button
                 type="submit"
-                 className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-4 px-6 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:from-cyan-600 hover:to-purple-600 hover:shadow-xl transition-all duration-300"
+                 className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-4 px-6 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 hover:from-cyan-600 hover:to-purple-600 hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
