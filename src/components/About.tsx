@@ -34,12 +34,17 @@ const About: React.FC = () => {
             className="space-y-6"
           >
             <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10 flex items-center justify-center">
-                <User size={120} className="text-white/40" />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/10 to-purple-600/10 animate-pulse" />
+              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10 overflow-hidden relative group">
+                {/* Replace this src with your actual photo */}
+                <img 
+                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face"
+                  alt="Lakshita Verma"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-purple-600/10 group-hover:opacity-0 transition-opacity duration-300" />
               </div>
               <p className="text-center text-white/60 mt-4 text-sm">
-                3D Avatar - Photo placeholder ready
+                Lakshita Verma - CSE-AI Student
               </p>
             </div>
           </motion.div>
