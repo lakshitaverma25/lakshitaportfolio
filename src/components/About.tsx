@@ -35,9 +35,8 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10 overflow-hidden relative group">
-                {/* Replace this src with your actual photo */}
                 <img 
-                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face"
+                  src="/WhatsApp Image 2025-07-18 at 10.10.45 PM.jpeg"
                   alt="Lakshita Verma"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
