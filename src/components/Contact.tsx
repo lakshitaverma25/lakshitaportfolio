@@ -60,6 +60,13 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="w-full max-w-md ml-auto"
           >
+            {/* Let's Connect Title above form */}
+            <div className="text-center mb-8">
+              <h3 className="text-4xl md:text-5xl font-bold text-white">
+                Let's <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Connect!</span>
+              </h3>
+            </div>
+            
             <form 
               onSubmit={handleSubmit} 
               className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl p-8 space-y-6"
