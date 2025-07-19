@@ -34,17 +34,45 @@ const About: React.FC = () => {
             className="space-y-6"
           >
             <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10 overflow-hidden relative group">
+              <div className="w-80 h-80 mx-auto relative group">
+                {/* Animated background rings */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 to-purple-600/30 animate-pulse"></div>
+                <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-cyan-500/10 to-blue-500/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                
+                {/* Main image container */}
+                <div className="absolute inset-6 rounded-full overflow-hidden border-2 border-white/20 backdrop-blur-lg bg-gradient-to-br from-cyan-400/10 to-purple-600/10">
+                  {/* Floating particles effect */}
+                  <div className="absolute inset-0 opacity-30">
+                    <div className="absolute top-4 left-4 w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+                    <div className="absolute top-8 right-6 w-1 h-1 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                    <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '0.6s' }}></div>
+                    <div className="absolute bottom-4 right-4 w-1 h-1 bg-cyan-300 rounded-full animate-bounce" style={{ animationDelay: '0.9s' }}></div>
+                  </div>
+                  
+                  {/* Image with enhanced effects */}
                 <img 
                   src="/WhatsApp Image 2025-07-18 at 10.10.45 PM.jpeg"
                   alt="Lakshita Verma"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-purple-600/10 group-hover:opacity-0 transition-opacity duration-300" />
+                  
+                  {/* Overlay effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 group-hover:opacity-0 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
+                </div>
+                
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/0 to-purple-600/0 group-hover:from-cyan-400/20 group-hover:to-purple-600/20 transition-all duration-500 blur-xl"></div>
               </div>
-              <p className="text-center text-white/60 mt-4 text-sm">
+              
+              {/* Enhanced caption */}
+              <motion.p 
+                className="text-center text-white/80 mt-6 text-sm font-medium"
+                whileHover={{ scale: 1.05 }}
+              >
                 Lakshita Verma - CSE-AI Student
-              </p>
+              </motion.p>
             </div>
           </motion.div>
 
