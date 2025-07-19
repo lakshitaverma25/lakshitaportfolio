@@ -108,6 +108,22 @@ const CurrentlyLearning: React.FC = () => {
             </p>
           </div>
         </motion.div>
+
+        {/* Let's Connect Title - Between learning philosophy and contact section */}
+        <motion.div
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-6xl md:text-7xl font-bold text-white">
+            Let's <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" style={{
+              textShadow: '0 0 30px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.4)',
+              filter: 'drop-shadow(0 0 20px rgba(168, 85, 247, 0.6))'
+            }}>Connect!</span>
+          </h3>
+        </motion.div>
       </div>
     </section>
   );
