@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="absolute top-20 left-1/2 transform -translate-x-1/2 z-30"
+          className="absolute top-1/3 left-1/2 transform -translate-x-1/2 z-30"
         >
           <h3 className="text-6xl md:text-7xl font-bold text-white text-center">
             Let's <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl" style={{
