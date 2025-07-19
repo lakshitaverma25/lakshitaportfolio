@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
             className="text-left space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Connect <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">with Me</span>
+              <span className="text-2xl md:text-3xl">Connect <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">with Me</span></span>
             </h2>
             
             <div className="space-y-4">
