@@ -35,56 +35,38 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <div className="w-80 h-80 mx-auto relative group">
-                {/* Sun-like radial glow rays */}
+                {/* Blue glow and sparkle effects */}
                 <div className="absolute inset-0 rounded-full">
-                  {/* Main glow circle */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-radial from-yellow-400/20 via-orange-400/10 to-transparent animate-pulse"></div>
+                  {/* Main blue glow */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-radial from-cyan-400/30 via-blue-400/15 to-transparent animate-pulse"></div>
                   
-                  {/* Sparkle rays */}
-                  <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
+                  {/* Floating blue sparkles around the image */}
+                  <div className="absolute inset-0">
                     {[...Array(8)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute w-1 bg-gradient-to-t from-transparent via-yellow-300/60 to-transparent"
+                        className="absolute w-1.5 h-1.5 bg-cyan-300 rounded-full animate-pulse opacity-70"
                         style={{
-                          height: '120px',
-                          left: '50%',
-                          top: '-20px',
-                          transformOrigin: '50% 170px',
-                          transform: `translateX(-50%) rotate(${i * 45}deg)`,
+                          left: `${15 + i * 10}%`,
+                          top: `${10 + (i % 4) * 20}%`,
+                          animationDelay: `${i * 0.4}s`,
+                          animationDuration: '3s',
                         }}
                       />
                     ))}
                   </div>
                   
-                  {/* Shorter sparkle rays */}
-                  <div className="absolute inset-0 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
-                    {[...Array(12)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-0.5 bg-gradient-to-t from-transparent via-cyan-300/40 to-transparent"
-                        style={{
-                          height: '80px',
-                          left: '50%',
-                          top: '0px',
-                          transformOrigin: '50% 150px',
-                          transform: `translateX(-50%) rotate(${i * 30}deg)`,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  
-                  {/* Floating sparkles */}
+                  {/* Additional sparkles with different timing */}
                   <div className="absolute inset-0">
                     {[...Array(6)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute w-2 h-2 bg-yellow-300 rounded-full animate-bounce opacity-60"
+                        className="absolute w-1 h-1 bg-blue-300 rounded-full animate-bounce opacity-60"
                         style={{
-                          left: `${20 + i * 12}%`,
-                          top: `${15 + (i % 3) * 25}%`,
-                          animationDelay: `${i * 0.3}s`,
-                          animationDuration: '2s',
+                          left: `${25 + i * 12}%`,
+                          top: `${20 + (i % 3) * 25}%`,
+                          animationDelay: `${i * 0.5}s`,
+                          animationDuration: '2.5s',
                         }}
                       />
                     ))}
@@ -92,7 +74,7 @@ const About: React.FC = () => {
                 </div>
                 
                 {/* Main image container */}
-                <div className="absolute inset-8 rounded-full overflow-hidden border-3 border-yellow-300/30 backdrop-blur-lg bg-gradient-to-br from-yellow-400/5 to-orange-400/5 shadow-2xl shadow-yellow-400/20">
+                <div className="absolute inset-8 rounded-full overflow-hidden border-3 border-cyan-300/40 backdrop-blur-lg bg-gradient-to-br from-cyan-400/10 to-blue-400/5 shadow-2xl shadow-cyan-400/30">
                   {/* Image with enhanced effects */}
                   <img 
                     src="/WhatsApp Image 2025-07-18 at 10.10.45 PM.jpeg"
@@ -102,7 +84,7 @@ const About: React.FC = () => {
                 </div>
                 
                 {/* Enhanced glow on hover */}
-                <div className="absolute inset-0 rounded-full bg-gradient-radial from-yellow-400/0 to-transparent group-hover:from-yellow-400/30 transition-all duration-500 blur-2xl"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-radial from-cyan-400/0 to-transparent group-hover:from-cyan-400/40 transition-all duration-500 blur-2xl"></div>
               </div>
               
               {/* Enhanced caption */}
