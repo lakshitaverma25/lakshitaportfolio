@@ -35,35 +35,74 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <div className="w-80 h-80 mx-auto relative group">
-                {/* Animated background rings */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 to-purple-600/30 animate-pulse"></div>
-                <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-cyan-500/10 to-blue-500/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                
-                {/* Main image container */}
-                <div className="absolute inset-6 rounded-full overflow-hidden border-2 border-white/20 backdrop-blur-lg bg-gradient-to-br from-cyan-400/10 to-purple-600/10">
-                  {/* Floating particles effect */}
-                  <div className="absolute inset-0 opacity-30">
-                    <div className="absolute top-4 left-4 w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-                    <div className="absolute top-8 right-6 w-1 h-1 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
-                    <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '0.6s' }}></div>
-                    <div className="absolute bottom-4 right-4 w-1 h-1 bg-cyan-300 rounded-full animate-bounce" style={{ animationDelay: '0.9s' }}></div>
+                {/* Sun-like radial glow rays */}
+                <div className="absolute inset-0 rounded-full">
+                  {/* Main glow circle */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-radial from-yellow-400/20 via-orange-400/10 to-transparent animate-pulse"></div>
+                  
+                  {/* Sparkle rays */}
+                  <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-1 bg-gradient-to-t from-transparent via-yellow-300/60 to-transparent"
+                        style={{
+                          height: '120px',
+                          left: '50%',
+                          top: '-20px',
+                          transformOrigin: '50% 170px',
+                          transform: `translateX(-50%) rotate(${i * 45}deg)`,
+                        }}
+                      />
+                    ))}
                   </div>
                   
-                  {/* Image with enhanced effects */}
-                <img 
-                  src="/WhatsApp Image 2025-07-18 at 10.10.45 PM.jpeg"
-                  alt="Lakshita Verma"
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110"
-                />
+                  {/* Shorter sparkle rays */}
+                  <div className="absolute inset-0 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
+                    {[...Array(12)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-0.5 bg-gradient-to-t from-transparent via-cyan-300/40 to-transparent"
+                        style={{
+                          height: '80px',
+                          left: '50%',
+                          top: '0px',
+                          transformOrigin: '50% 150px',
+                          transform: `translateX(-50%) rotate(${i * 30}deg)`,
+                        }}
+                      />
+                    ))}
+                  </div>
                   
-                  {/* Overlay effects */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 group-hover:opacity-0 transition-opacity duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:opacity-0 transition-opacity duration-500" />
+                  {/* Floating sparkles */}
+                  <div className="absolute inset-0">
+                    {[...Array(6)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-2 h-2 bg-yellow-300 rounded-full animate-bounce opacity-60"
+                        style={{
+                          left: `${20 + i * 12}%`,
+                          top: `${15 + (i % 3) * 25}%`,
+                          animationDelay: `${i * 0.3}s`,
+                          animationDuration: '2s',
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
                 
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/0 to-purple-600/0 group-hover:from-cyan-400/20 group-hover:to-purple-600/20 transition-all duration-500 blur-xl"></div>
+                {/* Main image container */}
+                <div className="absolute inset-8 rounded-full overflow-hidden border-3 border-yellow-300/30 backdrop-blur-lg bg-gradient-to-br from-yellow-400/5 to-orange-400/5 shadow-2xl shadow-yellow-400/20">
+                  {/* Image with enhanced effects */}
+                  <img 
+                    src="/WhatsApp Image 2025-07-18 at 10.10.45 PM.jpeg"
+                    alt="Lakshita Verma"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+                  />
+                </div>
+                
+                {/* Enhanced glow on hover */}
+                <div className="absolute inset-0 rounded-full bg-gradient-radial from-yellow-400/0 to-transparent group-hover:from-yellow-400/30 transition-all duration-500 blur-2xl"></div>
               </div>
               
               {/* Enhanced caption */}
