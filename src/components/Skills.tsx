@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div

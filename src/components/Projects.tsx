@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="min-h-screen flex items-center py-20 relative overflow-hidden">
       <ParticleBackground type="thunderstorm" />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/10 to-black z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div

@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <ParticleBackground type="fire" />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-black z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80 z-10" />
       
       <div className="container mx-auto px-4 text-center relative z-20">
         <motion.div

@@ -62,11 +62,11 @@ const Contact: React.FC = () => {
       />
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/80 to-black/90 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/85 to-gray-900/90 z-10" />
       
       {/* Additional blend overlay for seamless integration */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60 z-10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-transparent to-gray-900/40 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="grid lg:grid-cols-3 gap-8 items-center">
