@@ -217,6 +217,7 @@ const ShootingStarIntro: React.FC<ShootingStarIntroProps> = ({ onComplete }) => 
                 }}
               />
             ))}
+          </div>
           </motion.div>
         )}
       </motion.div>
