@@ -58,6 +58,7 @@ const ShootingStarIntro: React.FC<ShootingStarIntroProps> = ({ onComplete }) => 
   // Calculate shooting star position
   const shootingStarX = -200 + (shootingStarProgress * (window.innerWidth + 400));
   const shootingStarY = 200 - (shootingStarProgress * 300);
+
   // Generate random sparkles
   const sparkles = Array.from({ length: 30 }, (_, i) => ({
     id: i,
