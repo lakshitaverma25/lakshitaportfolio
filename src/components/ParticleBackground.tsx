@@ -42,21 +42,21 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ type }) => {
       case 'particles':
         return {
           particles: {
-            number: { value: 80 },
+            number: { value: 30 },
             color: { value: '#06b6d4' },
             shape: { type: 'circle' },
-            opacity: { value: 0.5 },
-            size: { value: 3, random: true },
+            opacity: { value: 0.2 },
+            size: { value: 2, random: true },
             links: {
               enable: true,
               distance: 150,
               color: '#06b6d4',
-              opacity: 0.4,
+              opacity: 0.1,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 1,
+              speed: 0.5,
               direction: 'none',
               random: false,
               straight: false,
@@ -65,8 +65,8 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ type }) => {
           },
           interactivity: {
             events: {
-              onHover: { enable: true, mode: 'grab' },
-              onClick: { enable: true, mode: 'push' },
+              onHover: { enable: false },
+              onClick: { enable: false },
             },
           },
         };
