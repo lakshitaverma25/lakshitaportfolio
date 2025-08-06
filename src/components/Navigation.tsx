@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,20 +46,64 @@ const Navigation: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10"
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ 
+              scale: 1.1,
+              rotate: [0, -5, 5, 0],
+              transition: { duration: 0.5 }
+            }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
             className="text-3xl font-bold text-white flex items-center"
           >
-            <span className="text-cyan-400 transform -translate-y-1">L</span>
-            <span className="text-purple-400">V</span>
+            <motion.span 
+              className="text-cyan-400 transform -translate-y-1"
+              animate={{ 
+                textShadow: [
+                  '0 0 10px rgba(6, 182, 212, 0.5)',
+                  '0 0 20px rgba(6, 182, 212, 0.8)',
+                  '0 0 10px rgba(6, 182, 212, 0.5)'
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              L
+            </motion.span>
+            <motion.span 
+              className="text-purple-400"
+              animate={{ 
+                textShadow: [
+                  '0 0 10px rgba(168, 85, 247, 0.5)',
+                  '0 0 20px rgba(168, 85, 247, 0.8)',
+                  '0 0 10px rgba(168, 85, 247, 0.5)'
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+            >
+              V
+            </motion.span>
+            <motion.div
+              className="ml-2"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            >
+              <Sparkles className="text-orange-400" size={16} />
+            </motion.div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <motion.div 
+            className="hidden md:flex space-x-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, staggerChildren: 0.1 }}
+          >
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -69,26 +113,42 @@ const Navigation: React.FC = () => {
                     ? 'text-cyan-400'
                     : 'text-white/80 hover:text-white'
                 }`}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ 
+                  scale: 1.1,
+                  y: -2,
+                  textShadow: '0 0 8px rgba(255,255,255,0.8)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + navItems.indexOf(item) * 0.1 }}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 )}
               </motion.button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white p-2"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}

@@ -67,12 +67,10 @@ const CursorTrail: React.FC = () => {
             }}
             className="absolute w-2 h-2 pointer-events-none"
           >
-            {/* Star shape using CSS */}
+            {/* Orange circle sparkle */}
             <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 transform rotate-0" 
-                   style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' }} />
-              <div className="absolute inset-0 bg-white/60 transform rotate-0" 
-                   style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' }} />
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-full" />
+              <div className="absolute inset-0 bg-white/60 rounded-full blur-sm" />
             </div>
           </motion.div>
         ))}
