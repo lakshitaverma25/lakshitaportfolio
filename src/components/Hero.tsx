@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               <Zap className="text-cyan-400" size={24} />
             </div>
             <p className="text-white/90 text-lg">
-              Thoda rukna padega bhai, AI ko thoda dimaag lagaane do! 🧠⚙️
+              Thoda ruk ja bhai… AI abhi dimaag laga raha hai 🧠⚙️
             </p>
           </motion.div>
           
