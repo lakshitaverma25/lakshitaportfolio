@@ -10,13 +10,17 @@ interface Sparkle {
 
 const CursorTrail: React.FC = () => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     let sparkleId = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // Update triangle cursor position
+      const cursor = document.body;
+      if (cursor) {
+        cursor.style.setProperty('--cursor-x', `${e.clientX}px`);
+        cursor.style.setProperty('--cursor-y', `${e.clientY}px`);
+      }
       
       // Add new sparkle
       const newSparkle: Sparkle = {
@@ -34,6 +38,10 @@ const CursorTrail: React.FC = () => {
       const now = Date.now();
       setSparkles(prev => prev.filter(sparkle => now - sparkle.timestamp < 1000));
     }, 100);
+
+    // Add CSS custom properties for cursor position
+    document.body.style.setProperty('--cursor-x', '0px');
+    document.body.style.setProperty('--cursor-y', '0px');
 
     window.addEventListener('mousemove', handleMouseMove);
 
@@ -67,11 +75,8 @@ const CursorTrail: React.FC = () => {
             }}
             className="absolute w-2 h-2 pointer-events-none"
           >
-            {/* Triangle sparkle */}
-            <div className="relative w-full h-full">
-              <div className="w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-orange-400" />
-              <div className="absolute inset-0 bg-white/40 blur-sm" />
-            </div>
+            {/* Shapeless sparkle */}
+            <div className="w-1 h-1 bg-orange-400 rounded-full opacity-80" />
           </motion.div>
         ))}
       </AnimatePresence>

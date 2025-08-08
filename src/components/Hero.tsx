@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Brain, Zap } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
+import AnimatedMemeText from './AnimatedMemeText';
 import { fadeInUp, glowAnimation } from '../utils/animations';
 
 const Hero: React.FC = () => {
@@ -46,13 +47,7 @@ const Hero: React.FC = () => {
             {...fadeInUp}
             transition={{ delay: 0.6 }}
           >
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Brain className="text-yellow-400" size={24} />
-              <Zap className="text-cyan-400" size={24} />
-            </div>
-            <p className="text-white/90 text-lg">
-              Thoda ruk ja bhai… AI abhi dimaag laga raha hai 🧠⚙️
-            </p>
+            <AnimatedMemeText />
           </motion.div>
           
           <motion.div
