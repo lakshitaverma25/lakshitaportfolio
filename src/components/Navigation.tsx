@@ -90,10 +90,10 @@ const Navigation: React.FC = () => {
             </motion.span>
             <motion.div
               className="ml-2"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3 }}
             >
-              <Sparkles className="text-orange-400" size={16} />
+              <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-orange-400" />
             </motion.div>
           </motion.div>
 
