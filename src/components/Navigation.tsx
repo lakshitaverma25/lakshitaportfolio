@@ -63,38 +63,31 @@ const Navigation: React.FC = () => {
             className="text-3xl font-bold text-white flex items-center"
           >
             <motion.span 
-              className="text-cyan-400 transform -translate-y-1"
+              className="text-cyan-400 transform -translate-y-1 drop-shadow-lg"
               animate={{ 
                 textShadow: [
-                  '0 0 10px rgba(6, 182, 212, 0.5)',
-                  '0 0 20px rgba(6, 182, 212, 0.8)',
-                  '0 0 10px rgba(6, 182, 212, 0.5)'
+                  '0 0 15px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.6)',
+                  '0 0 25px rgba(6, 182, 212, 1), 0 0 50px rgba(6, 182, 212, 0.8)',
+                  '0 0 15px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.6)'
                 ]
               }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1.5, repeat: Infinity }}
             >
               L
             </motion.span>
             <motion.span 
-              className="text-purple-400"
+              className="text-purple-400 drop-shadow-lg"
               animate={{ 
                 textShadow: [
-                  '0 0 10px rgba(168, 85, 247, 0.5)',
-                  '0 0 20px rgba(168, 85, 247, 0.8)',
-                  '0 0 10px rgba(168, 85, 247, 0.5)'
+                  '0 0 15px rgba(168, 85, 247, 0.8), 0 0 30px rgba(168, 85, 247, 0.6)',
+                  '0 0 25px rgba(168, 85, 247, 1), 0 0 50px rgba(168, 85, 247, 0.8)',
+                  '0 0 15px rgba(168, 85, 247, 0.8), 0 0 30px rgba(168, 85, 247, 0.6)'
                 ]
               }}
-              transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+              transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
             >
               V
             </motion.span>
-            <motion.div
-              className="ml-2"
-              whileHover={{ scale: 1.2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-orange-400" />
-            </motion.div>
           </motion.div>
 
           {/* Desktop Navigation */}

@@ -67,10 +67,10 @@ const CursorTrail: React.FC = () => {
             }}
             className="absolute w-2 h-2 pointer-events-none"
           >
-            {/* Orange circle sparkle */}
+            {/* Triangle sparkle */}
             <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-full" />
-              <div className="absolute inset-0 bg-white/60 rounded-full blur-sm" />
+              <div className="w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-orange-400" />
+              <div className="absolute inset-0 bg-white/40 blur-sm" />
             </div>
           </motion.div>
         ))}
