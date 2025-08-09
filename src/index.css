@@ -2,26 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide default cursor globally */
-* {
-  cursor: none !important;
-}
-
-/* Custom triangle cursor */
-body::before {
-  content: '';
-  position: fixed;
-  top: var(--cursor-y, 0px);
-  left: var(--cursor-x, 0px);
-  width: 0;
-  height: 0;
-  border-left: 10px solid white;
-  border-right: 10px solid transparent;
-  border-bottom: 14px solid transparent;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-2px, -2px);
-  transition: all 0.05s ease;
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
