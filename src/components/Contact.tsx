@@ -69,14 +69,14 @@ const Contact: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-transparent to-gray-900/40 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
-        <div className="grid lg:grid-cols-3 gap-8 items-center">
+        <div className="grid lg:grid-cols-5 gap-8 items-start">
           {/* Left side - Connect with Me and Social Links */}
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-left space-y-8"
+            className="lg:col-span-2 text-left space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               <span className="text-2xl md:text-3xl">Connect <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">with Me</span></span>
@@ -102,17 +102,17 @@ const Contact: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right side - Form (spans 2 columns) */}
+          {/* Right side - Form (spans 2 columns, positioned more to the right) */}
           <motion.div
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="lg:col-span-2 w-full max-w-lg ml-auto"
+            className="lg:col-span-2 lg:col-start-4 w-full max-w-md ml-auto"
           >
             <form 
               onSubmit={handleSubmit} 
-              className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl p-6 space-y-4"
+              className="bg-black/40 backdrop-blur-md border border-white/30 rounded-2xl p-6 space-y-4 shadow-2xl"
             >
               <div className="space-y-3">
                 <input
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
+                  rows={3}
                   className="w-full px-4 py-3 bg-black/30 backdrop-blur-md border border-white/30 rounded-xl text-white placeholder-white/70 focus:outline-none focus:border-purple-400 transition-all duration-300 resize-none"
                 />
               </div>
