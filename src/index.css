@@ -13,11 +13,10 @@ body::before {
   position: fixed;
   top: var(--cursor-y, 0px);
   left: var(--cursor-x, 0px);
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 12px solid #fb923c;
+  width: 12px;
+  height: 18px;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  clip-path: polygon(0 0, 0 80%, 40% 60%, 100% 100%, 20% 50%);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);

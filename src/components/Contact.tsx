@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Github, Linkedin, Mail, Instagram } from 'lucide-react';
-import AnimatedAvatar from './AnimatedAvatar';
 import { fadeInUp } from '../utils/animations';
 
 const Contact: React.FC = () => {
@@ -70,7 +69,7 @@ const Contact: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-transparent to-gray-900/40 z-10" />
       
       <div className="container mx-auto px-4 relative z-20">
-        <div className="grid lg:grid-cols-4 gap-8 items-center">
+        <div className="grid lg:grid-cols-3 gap-8 items-center">
           {/* Left side - Connect with Me and Social Links */}
           <motion.div
             initial="initial"
@@ -101,17 +100,6 @@ const Contact: React.FC = () => {
                 </motion.a>
               ))}
             </div>
-          </motion.div>
-
-          {/* Animated Avatar */}
-          <motion.div
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <AnimatedAvatar />
           </motion.div>
 
           {/* Right side - Form (spans 2 columns) */}
