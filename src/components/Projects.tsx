@@ -38,23 +38,29 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="min-h-screen flex items-center py-20 relative overflow-hidden">
+    <section id="projects" className="min-h-screen flex items-center py-20 relative overflow-hidden perspective-1000">
       <ParticleBackground type="thunderstorm" />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80 z-10" />
+      <div className="absolute inset-0 z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80 transform-gpu" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-purple-900/10 via-transparent to-cyan-900/10 transform-gpu translate-z-10" />
+      </div>
       
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container mx-auto px-4 relative z-20 transform-gpu">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-16 transform-gpu"
+          style={{ transform: 'translateZ(30px)' }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent transform-gpu hover:scale-105 transition-transform duration-300"
+              style={{ textShadow: '0 10px 30px rgba(6, 182, 212, 0.3)' }}>
             Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full transform-gpu shadow-lg" 
+               style={{ boxShadow: '0 5px 15px rgba(6, 182, 212, 0.5)' }} />
           <p className="text-white/70 mt-6 text-lg">
             Transforming ideas into reality through code
           </p>
@@ -65,18 +71,27 @@ const Projects: React.FC = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 transform-gpu"
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={scaleIn}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-6 group hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-purple-400/30"
+              whileHover={{ 
+                scale: 1.02, 
+                y: -5,
+                rotateY: 3,
+                rotateX: -2
+              }}
+              className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-6 group hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-purple-400/30 transform-gpu"
+              style={{ 
+                transform: `translateZ(${20 + parseInt(project.id) * 10}px)`,
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(168, 85, 247, 0.1)'
+              }}
             >
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Zap className="text-yellow-400" size={20} />
+                  <Zap className="text-yellow-400 group-hover:rotate-12 transition-transform duration-300 transform-gpu" size={20} />
                   <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                     {project.title}
                   </h3>
@@ -86,25 +101,32 @@ const Projects: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6 transform-gpu">
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech, index) => (
-                    <span
+                    <motion.span
                       key={index}
-                      className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-sm text-cyan-300 backdrop-blur-sm"
+                      whileHover={{ scale: 1.1, rotateZ: 5 }}
+                      className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-sm text-cyan-300 backdrop-blur-sm transform-gpu shadow-lg"
+                      style={{ transform: `translateZ(${5 + index * 2}px)` }}
                     >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 transform-gpu">
                 <motion.a
                   href={project.githubLink}
-                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform-gpu shadow-lg"
+                  whileHover={{ 
+                    scale: 1.05,
+                    rotateY: 5,
+                    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)'
+                  }}
                   whileTap={{ scale: 0.95 }}
+                  style={{ transform: 'translateZ(10px)' }}
                 >
                   <Github size={16} />
                   Code
@@ -113,9 +135,14 @@ const Projects: React.FC = () => {
                 {project.liveDemo && (
                   <motion.a
                     href={project.liveDemo}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform-gpu shadow-lg"
+                    whileHover={{ 
+                      scale: 1.05,
+                      rotateY: -5,
+                      boxShadow: '0 10px 20px rgba(6, 182, 212, 0.4)'
+                    }}
                     whileTap={{ scale: 0.95 }}
+                    style={{ transform: 'translateZ(10px)' }}
                   >
                     <ExternalLink size={16} />
                     Live Demo
@@ -131,9 +158,14 @@ const Projects: React.FC = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-16 text-center transform-gpu"
+          style={{ transform: 'translateZ(20px)' }}
         >
-          <div className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto transform-gpu hover:scale-105 transition-all duration-300 shadow-2xl"
+               style={{ 
+                 transform: 'translateZ(30px)',
+                 boxShadow: '0 25px 50px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(6, 182, 212, 0.1)'
+               }}>
             <h3 className="text-2xl font-bold text-white mb-4">More Projects Coming Soon</h3>
             <p className="text-white/80 leading-relaxed">
               I'm constantly working on new projects and learning new technologies. Stay tuned for more exciting developments!
