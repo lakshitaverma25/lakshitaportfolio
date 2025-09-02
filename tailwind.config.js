@@ -16,21 +16,17 @@ export default {
       },
       keyframes: {
         'float-slow': {
-          '0%, 100%': { transform: 'translateY(0px) translateZ(30px)' },
-          '50%': { transform: 'translateY(-20px) translateZ(30px)' },
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
         'float-reverse': {
-          '0%, 100%': { transform: 'translateY(0px) translateZ(30px) rotate(0deg)' },
-          '50%': { transform: 'translateY(20px) translateZ(30px) rotate(180deg)' },
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(20px) rotate(180deg)' },
         },
         'pulse-slow': {
           '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
           '50%': { opacity: '0.8', transform: 'scale(1.05)' },
         },
-      },
-      perspective: {
-        '1000': '1000px',
-        '2000': '2000px',
       },
     },
   },

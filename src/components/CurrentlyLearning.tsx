@@ -109,7 +109,6 @@ const CurrentlyLearning: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Let's Connect Title - Between learning philosophy and contact section */}
         <motion.div
           variants={fadeInUp}
           initial="initial"

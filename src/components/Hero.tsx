@@ -7,32 +7,25 @@ import { fadeInUp, glowAnimation } from '../utils/animations';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden perspective-1000">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <ParticleBackground type="fire" />
       
-      {/* 3D Layered Background */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80 transform-gpu" />
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-transparent to-cyan-900/20 transform-gpu translate-z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform-gpu translate-z-20" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80" />
       
-      <div className="container mx-auto px-4 text-center relative z-20 transform-gpu">
+      <div className="container mx-auto px-4 text-center relative z-20">
         <motion.div
-          initial={{ opacity: 0, y: 100, rotateX: 15 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto transform-gpu"
+          className="max-w-4xl mx-auto"
         >
-          {/* 3D Floating Elements */}
-          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-full blur-xl animate-float-slow transform-gpu translate-z-30" />
-          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-gradient-to-br from-purple-400/20 to-red-400/20 rounded-full blur-xl animate-float-reverse transform-gpu translate-z-30" />
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-full blur-xl animate-float-slow" />
+          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-gradient-to-br from-purple-400/20 to-red-400/20 rounded-full blur-xl animate-float-reverse" />
           
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-red-400 bg-clip-text text-transparent transform-gpu hover:scale-105 transition-transform duration-300"
+            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-red-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
             style={{
               textShadow: '0 10px 30px rgba(6, 182, 212, 0.3), 0 20px 60px rgba(168, 85, 247, 0.2)',
-              transform: 'translateZ(50px)',
             }}
             {...fadeInUp}
           >
@@ -40,8 +33,7 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.h2
-            className="text-2xl md:text-3xl text-white/90 mb-4 font-light transform-gpu"
-            style={{ transform: 'translateZ(40px)' }}
+            className="text-2xl md:text-3xl text-white/90 mb-4 font-light"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
@@ -49,9 +41,8 @@ const Hero: React.FC = () => {
           </motion.h2>
           
           <motion.p
-            className="text-xl md:text-2xl text-cyan-300 mb-8 font-medium transform-gpu"
+            className="text-xl md:text-2xl text-cyan-300 mb-8 font-medium"
             style={{ 
-              transform: 'translateZ(30px)',
               textShadow: '0 5px 15px rgba(6, 182, 212, 0.4)'
             }}
             {...fadeInUp}
@@ -61,9 +52,8 @@ const Hero: React.FC = () => {
           </motion.p>
           
           <motion.div
-            className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto transform-gpu hover:scale-105 transition-all duration-300 shadow-2xl"
+            className="bg-black/40 backdrop-blur-lg border border-white/20 rounded-lg p-6 mb-8 max-w-2xl mx-auto hover:scale-105 transition-all duration-300 shadow-2xl"
             style={{ 
-              transform: 'translateZ(20px)',
               boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(6, 182, 212, 0.1)'
             }}
             {...fadeInUp}
@@ -75,14 +65,11 @@ const Hero: React.FC = () => {
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.8 }}
-            style={{ transform: 'translateZ(10px)' }}
           >
             <motion.button
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 mx-auto hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform-gpu shadow-2xl"
+              className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 mx-auto hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 shadow-2xl"
               whileHover={{ 
                 scale: 1.05,
-                rotateY: 5,
-                rotateX: -5,
                 boxShadow: '0 20px 40px rgba(6, 182, 212, 0.4), 0 10px 20px rgba(168, 85, 247, 0.3)'
               }}
               whileTap={{ scale: 0.95 }}
