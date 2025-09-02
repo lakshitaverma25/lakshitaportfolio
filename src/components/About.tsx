@@ -56,6 +56,7 @@ const About: React.FC = () => {
                 </div>
                 
                 <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-cyan-400/30 backdrop-blur-sm bg-gradient-to-br from-cyan-400/5 to-blue-400/5 shadow-xl shadow-cyan-400/20"
+                <div className="absolute inset-8 rounded-2xl overflow-hidden border-2 border-cyan-400/30 backdrop-blur-sm bg-gradient-to-br from-cyan-400/5 to-blue-400/5 shadow-xl shadow-cyan-400/20"
                      style={{ 
                        boxShadow: '0 25px 50px rgba(6, 182, 212, 0.3), 0 10px 20px rgba(6, 182, 212, 0.1)'
                      }}>
@@ -66,7 +67,7 @@ const About: React.FC = () => {
                   />
                 </div>
                 
-                <div className="absolute -inset-12 rounded-full bg-gradient-radial from-cyan-400/0 to-transparent group-hover:from-cyan-400/15 transition-all duration-700 blur-2xl"></div>
+                <div className="absolute -inset-12 rounded-2xl bg-gradient-radial from-cyan-400/0 to-transparent group-hover:from-cyan-400/15 transition-all duration-700 blur-2xl"></div>
               </div>
               
               <motion.p 
