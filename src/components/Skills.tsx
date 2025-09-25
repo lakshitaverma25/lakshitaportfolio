@@ -9,31 +9,31 @@ const Skills: React.FC = () => {
       title: 'Languages',
       icon: <Code className="text-cyan-400" size={32} />,
       skills: ['C', 'C++', 'Python'],
-      color: 'from-cyan-500/20 to-blue-500/20',
+      color: 'from-cyan-500/10 to-blue-500/10',
     },
     {
       title: 'Frontend',
       icon: <Monitor className="text-purple-400" size={32} />,
       skills: ['HTML', 'CSS'],
-      color: 'from-purple-500/20 to-pink-500/20',
+      color: 'from-purple-500/10 to-pink-500/10',
     },
     {
       title: 'Tools',
       icon: <Palette className="text-red-400" size={32} />,
       skills: ['Canva', 'Figma'],
-      color: 'from-red-500/20 to-rose-500/20',
+      color: 'from-red-500/10 to-rose-500/10',
     },
     {
       title: 'Platforms',
       icon: <Settings className="text-green-400" size={32} />,
       skills: ['Linux'],
-      color: 'from-green-500/20 to-emerald-500/20',
+      color: 'from-green-500/10 to-emerald-500/10',
     },
   ];
 
   return (
-    <section id="skills" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80" />
+    <section id="skills" className="min-h-screen flex items-center py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-black/40 to-gray-900/60" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div

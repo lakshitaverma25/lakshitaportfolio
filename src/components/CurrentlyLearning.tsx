@@ -29,8 +29,8 @@ const CurrentlyLearning: React.FC = () => {
   ];
 
   return (
-    <section id="learning" className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-900/80" />
+    <section id="learning" className="min-h-screen flex items-center py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-black/40 to-gray-900/60" />
       
       <div className="container mx-auto px-4 relative z-20">
         <motion.div

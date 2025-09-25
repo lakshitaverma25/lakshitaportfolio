@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden">
+    <section id="contact" className="min-h-screen flex items-center py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
         }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/85 to-gray-900/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-black/70 to-gray-900/80" />
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
